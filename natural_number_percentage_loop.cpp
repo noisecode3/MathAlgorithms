@@ -9,7 +9,7 @@ int main()
     std::cout << "Number of iterations: ";
     std::cin >> n;
 
-    if (n <= 0 && n > scale)
+    if (n <= 0 || n > scale)
     {
         std::cout << "Invalid input for number of iterations\n";
         return 1;
