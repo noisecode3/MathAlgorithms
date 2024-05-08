@@ -4,9 +4,11 @@ using namespace std;
 
 inline int gcd_sig(int a, int b)
 {
-   if (b == 0)
-   return a;
-   return gcd_sig(b, a % b);
+    if (b == 0)
+    {
+        return a;
+    }
+    return gcd_sig(b, a % b);
 }
 
 inline int gcd(int a, int b) { return abs(gcd_sig(a,b)); }
