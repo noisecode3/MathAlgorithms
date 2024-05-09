@@ -1,11 +1,9 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 int main()
 {
     unsigned int n; // Number of iterations
     unsigned int gotoPercent; // Percentage of total work
-    unsigned int scale = 1000; // resolution scale
+    unsigned int scale = 1000; // Resolution scale
     std::cout << "Number of iterations: ";
     std::cin >> n;
 
@@ -15,12 +13,10 @@ int main()
         return 1;
     }
 
-    std::vector<int> validPercentages = {1, 2, 4, 5, 10, 20, 25, 50, 100};
-
-    std::cout << "Percentage of total work that divides 100 1,2,4,5,10,20,25,50,100: ";
+    std::cout << "Percentage of total work 1 to 100: ";
     std::cin >> gotoPercent;
 
-    if (std::find(validPercentages.begin(), validPercentages.end(), gotoPercent) == validPercentages.end())
+    if (gotoPercent < 1 || gotoPercent > 100)
     {
         std::cout << "Invalid percentage value\n";
         return 1;
@@ -31,7 +27,7 @@ int main()
 
     // Calculate progress increment per iteration
     unsigned int progressIncrement = scale / n;
-    
+
     // Calculate remainder
     unsigned int remainder = scale % n;
 
